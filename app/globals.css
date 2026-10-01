@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('/fonts/BarlowCondensed-ExtraBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Inter-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/Inter-SemiBold.woff2') format('woff2');
+}
+
+@layer base {
+  :root {
+    --bg-studio: #ADADAF;
+    --text-black: #0A0A0A;
+    --accent-orange: #FF5A00;
+    --font-condensed: 'Barlow Condensed', sans-serif;
+    --font-inter: 'Inter', sans-serif;
+  }
+
+  html {
+    background-color: var(--bg-studio);
+    color: var(--text-black);
+    font-family: var(--font-inter);
+    scroll-behavior: auto;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--bg-studio);
+    color: var(--text-black);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  ::selection {
+    background-color: var(--text-black);
+    color: var(--bg-studio);
+  }
+}
+
+.font-condensed {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Lenis smooth scrolling styles */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
